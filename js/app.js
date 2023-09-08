@@ -38,3 +38,19 @@ document
       typedNumber.value = newTypedNumber;
     }
   });
+
+document.getElementById("verify-pin").addEventListener("click", function () {
+  const displayPin = document.getElementById("display-pin");
+  const currentPin = displayPin.value;
+  const typedNumberField = document.getElementById("typed-number");
+  const typedNumber = typedNumberField.value;
+  const pinSuccessMassage = document.getElementById("pin-success");
+  const pinWrongMassage = document.getElementById("pin-wrong");
+  if (typedNumber === currentPin) {
+    pinSuccessMassage.style.display = "block";
+    pinWrongMassage.style.display = "none";
+  } else {
+    pinWrongMassage.style.display = "block";
+    pinSuccessMassage.style.display = "none";
+  }
+});
